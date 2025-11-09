@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import useDetail from '../Utils/details';
 import { Loader } from 'lucide-react';
 
 const BillDetail = () => {
-
+  const modalRef =useRef()
  const detail = useDetail()
 
 
    if(!detail){
     return <Loader></Loader>
    }
+
+    function handleModal(){
+       modalRef.current.showModal()
+
+    }
     return (
         <div>
              
@@ -57,14 +62,25 @@ const BillDetail = () => {
                  Email:{detail.email}
 
               </p>
-     <button className='btn btn-wide mt-4 bg-violet-500 text-white'>Pay Bill</button>
+     <button onClick={()=>{handleModal()}} className='btn btn-wide mt-4 bg-violet-500 text-white'>Pay Bill</button>
 
                </div>
             </div>
           </div>
         </div>
       
-    
+    <dialog  ref={modalRef} className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Hello!</h3>
+    <p className="py-4">Press ESC key or click the button below to close</p>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button className="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
   
 
  
