@@ -8,6 +8,7 @@ import Root from './Layouts/Root';
 import Home from './Pages/Home';
 import Login from './User/Login';
 import SignUp from './User/SignUp';
+import Bills from './Pages/Bills';
 
 const router =createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router =createBrowserRouter([
        {
         path:"/signup",
         Component:SignUp,
+      },
+       {
+        path:"/bills",
+        Component:Bills,
       }
     ]
   }

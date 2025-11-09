@@ -20,7 +20,7 @@ const Navbar = () => {
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <Link to={'/'}> Home </Link>
-        <Link to={'/add-model'}> Bills </Link>
+        <Link to={'/bills'}> Bills </Link>
         {
         user &&  <Link to={'/my-model'}> My Pay Bills </Link>
 
@@ -32,7 +32,7 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal flex gap-4 px-1">
         <Link to={'/'}> Home </Link>
-        <Link to={'/add-model'}> Bills </Link>
+        <Link to={'/bills'}> Bills </Link>
        {
         user &&  <Link to={'/my-model'}> My Pay Bills </Link>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
  
  {
   user && user.photoURL ?( <img  className='w-10 h-10 rounded-full' src={user.photoURL}></img>  ) : 
-  ( <img  className='w-10 h-full rounded-full' src='/user.png'></img>  )
+  ( <img  className='w-10 h-full rounded-full' src='https://i.ibb.co.com/gL19M6xH/icon-7797704-640.png'></img>  )
  }
 
    {
