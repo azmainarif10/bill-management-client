@@ -9,6 +9,8 @@ import Home from './Pages/Home';
 import Login from './User/Login';
 import SignUp from './User/SignUp';
 import Bills from './Pages/Bills';
+import BillDetail from './Pages/BillDetail';
+import Private from './Pages/Private';
 
 const router =createBrowserRouter([
   {
@@ -30,6 +32,12 @@ const router =createBrowserRouter([
        {
         path:"/bills",
         Component:Bills,
+      },
+       {
+        path:"/bill-detail/:id",
+        element:(<Private>
+          <BillDetail></BillDetail>
+        </Private>)
       }
     ]
   }

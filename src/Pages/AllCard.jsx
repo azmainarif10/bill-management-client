@@ -1,5 +1,6 @@
 import React from 'react';
 import useBids from '../Utils/allBids';
+import { Link } from 'react-router';
 
 const AllCard = () => {
   const allBid = useBids()
@@ -8,7 +9,7 @@ const AllCard = () => {
         {
           allBid.map(bid=>
                    
-                 <div className="card  shadow-sm">
+                 <div key={bid._id} className="card  shadow-sm">
   <figure className="px-5 py-5 bg-violet-100">
     <img
       src={bid.image}
@@ -23,7 +24,7 @@ const AllCard = () => {
 
 
     <div className="card-actions">
-      <button className="btn bg-violet-500 text-white rounded-xl">See Details</button>
+     <Link to={`/bill-detail/${bid._id}`}> <button className="btn bg-violet-500 text-white rounded-xl">See Details</button> </Link>
     </div>
   </div>
 </div>

@@ -22,7 +22,11 @@ const Navbar = () => {
         <Link to={'/'}> Home </Link>
         <Link to={'/bills'}> Bills </Link>
         {
-        user &&  <Link to={'/my-model'}> My Pay Bills </Link>
+        user &&  <Link to={'/bill-detail/:id'}>  Bill Details </Link>
+
+        }
+        {
+        user &&  <Link to={'pay-bill'}> My Pay Bills </Link>
 
         }
       </ul>
@@ -33,8 +37,12 @@ const Navbar = () => {
     <ul className="menu menu-horizontal flex gap-4 px-1">
         <Link to={'/'}> Home </Link>
         <Link to={'/bills'}> Bills </Link>
+         {
+        user &&  <Link to={'/bill-detail/:id'}> Bill Details </Link>
+
+        }
        {
-        user &&  <Link to={'/my-model'}> My Pay Bills </Link>
+        user &&  <Link to={'/pay-bill'}> My Pay Bills </Link>
 
        }
        
@@ -50,7 +58,7 @@ const Navbar = () => {
  }
 
    {
-    user ? (<Link onClick={logOut} className="btn mr-10 text-white bg-[#404040]"> Logout </Link>) :
+    user ? (<Link onClick={logOut} className="btn mr-10 text-white bg-violet-400"> Logout </Link>) :
     (<>
     <p><Link to={'/login'} className="btn bg-violet-400 text-white ">Login </Link></p>
     <p><Link to={'/signup'} className="btn  bg-violet-400 text-white mr-10">SignUp </Link></p>

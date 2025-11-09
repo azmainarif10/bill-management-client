@@ -47,7 +47,7 @@ const Card = () => {
         <p className="py-2"> Location: {latest.location}</p>
          <p className="py-2"> Date :{latest.date}</p>
                                             
-        <Link to={`/details/${latest._id}`}>
+        <Link to={`/bill-detail/${latest._id}`}>
          <button className="btn bg-violet-400 text-white hover:bg-violet-500">
             See Details
           </button>

@@ -5,13 +5,9 @@ import { AuthContext } from './AuthContext';
 
 const Bills = () => {
   const {setCategory} = use(AuthContext)
-      const handleType = (count) => {
-    console.log(count)
-  }
+     
 
-  const handleDone = () => {
-    console.log(`Done after 5 loops!`)
-  }
+ 
     return (
       <>
         <div className='flex justify-center flex-col items-center'>
@@ -24,8 +20,6 @@ const Bills = () => {
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={1000}
-            onLoopDone={handleDone}
-            onType={handleType}
           /></p>
         </div>
           <div >
