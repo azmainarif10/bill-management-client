@@ -38,7 +38,7 @@ const UtilityCard = ({ utility }) => (
     </div>
 
     <div className="p-2 w-full">
-      <p className="text-xs font-semibold uppercase text-violet-300 tracking-wider mb-1">
+      <p className="text-xs font-semibold uppercase text-violet-400 tracking-wider mb-1">
         Utility Service
       </p>
       
@@ -72,8 +72,8 @@ const UtilityCategoryCards = () => {
   return (
     <div className="p-10 bg-violet-50 min-h-screen">
       
-      <h1 className="text-6xl font-extrabold text-gray-800 mb-10">
-        Utilities
+      <h1 className="text-4xl text-center font-bold text-violet-400 mb-10">
+        Bill Categories
       </h1>
 
       <div className="flex flex-wrap gap-8 justify-center">

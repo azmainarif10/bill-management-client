@@ -52,8 +52,8 @@ const Navbar = () => {
    {
     user ? (<Link onClick={logOut} className="btn mr-10 text-white bg-[#404040]"> Logout </Link>) :
     (<>
-    <p><Link to={'/login'} className="btn ">Login </Link></p>
-    <p><Link to={'/signup'} className="btn mr-10">SignUp </Link></p>
+    <p><Link to={'/login'} className="btn bg-violet-400 text-white ">Login </Link></p>
+    <p><Link to={'/signup'} className="btn  bg-violet-400 text-white mr-10">SignUp </Link></p>
 
     </>)
    }
