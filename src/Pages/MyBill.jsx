@@ -5,6 +5,8 @@ import useAxios from '../Utils/axios';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
 import Load from '../Components/Load';
+import { jsPDF } from 'jspdf'
+import  autoTable  from 'jspdf-autotable'
 
 
 const MyBill = () => {
@@ -72,6 +74,36 @@ const MyBill = () => {
      
   
 
+   }
+   function handleReport(){
+
+       const doc = new jsPDF();
+
+        const head = [['#', 'Name', 'Address', 'Date', 'Amount', 'Email', 'Phone']];
+    const body = myBills.map((bill, index) => [
+     index + 1,
+     bill.username,
+     bill.address,
+     bill.date,
+     bill.amount,
+     bill.email,
+     bill.phone,
+ ]);
+     doc.setFontSize(18);
+      doc.text(`Billing Report for ${user.email}`, 14, 20); 
+
+    autoTable(doc,{
+       head: head,
+       body: body,
+       startY: 30,
+       theme: 'striped',
+       headStyles: { fillColor: [79, 70, 229] }, 
+});
+      const finalY = doc.lastAutoTable.finalY; 
+     doc.setFontSize(12);
+     doc.text(`Total Bills: ${myBills.length}`, 14, finalY + 10);
+       doc.text(`Total Amount: ${totalAmount}`, 14, finalY + 17);
+        doc.save("Billing-Report.pdf");
    }
     return (
         <div>
@@ -214,7 +246,7 @@ const MyBill = () => {
    </div>
 
    <div className='flex justify-center py-5 items-center'>
-    <button className='btn  text-lg  bg-indigo-400 text-white'>Download Report</button>
+    <button onClick={()=>{handleReport()}} className='btn  text-lg  bg-indigo-400 text-white'>Download Report</button>
    </div>
 
     <dialog ref={modalRef} id="my_modal_5" className="modal modal-bottom sm:modal-middle">
