@@ -12,7 +12,21 @@ const BillDetail = () => {
  const {user} = use(AuthContext)
  const instance = useAxios()
  const currentDate=  new Date()
-    const navigate = useNavigate()   
+    const navigate = useNavigate()  
+    
+if(!detail){
+    return <Load></Load>
+   }
+
+    const currentMonth = currentDate.getMonth()
+    const currentYear = currentDate.getFullYear()
+
+    const billDate = new Date(detail.date)
+    const billMonth = billDate.getMonth()
+    const billYear = billDate.getFullYear()
+
+    const isCurrent = (billMonth === currentMonth && billYear === currentYear)
+
     const date = currentDate.toLocaleDateString("en-US",{
   
    month:"numeric",
@@ -20,9 +34,7 @@ const BillDetail = () => {
     year:"numeric"
     })
 
- if(!detail){
-    return <Load></Load>
-   }
+ 
 
     function handleModal(){
        modalRef.current.showModal()
@@ -107,7 +119,12 @@ const BillDetail = () => {
                  Email:{detail.email}
 
               </p>
-     <button onClick={()=>{handleModal()}} className='btn btn-wide mt-4 bg-violet-500 text-white'>Pay Bill</button>
+              {!isCurrent && (
+        <p className="text-indigo-500 font-semibold mb-2">
+            Only current month bills can be paid. Bill date: {detail.date}
+        </p>
+    )}
+     <button onClick={()=>{handleModal()}}  disabled={!isCurrent} className='btn btn-wide mt-4 disabled:bg-gray-400 disabled:text-gray-200 bg-violet-500 text-white'>Pay Bill</button>
 
                </div>
             </div>
