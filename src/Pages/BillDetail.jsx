@@ -57,6 +57,9 @@ const BillDetail = () => {
     } 
       
     }
+    function closeModal(){
+      modalRef.current.close()
+    }
     return (
         <div>
              
@@ -119,7 +122,9 @@ const BillDetail = () => {
       </h2>
       <form onSubmit={(e)=>{handleSubmit(e)}} className="space-y-6">
 
-     
+  <button type='button'  onClick={closeModal} className="btn btn-sm btn-circle bg-violet-400 text-white btn-ghost absolute right-8 top-6">✕</button>
+        <p className="py-4 text-gray-800">Press ESC key or click on ✕ button to close</p>
+
            
   <div key="email">
     <label htmlFor="email" className="block text-sm font-medium text-gray-700">

@@ -12,6 +12,7 @@ import Bills from './Pages/Bills';
 import BillDetail from './Pages/BillDetail';
 import Private from './Pages/Private';
 import MyBill from './Pages/MyBill';
+import AddBill from './Pages/AddBill';
 
 const router =createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router =createBrowserRouter([
         element:(<Private>
           <MyBill></MyBill>
         </Private>)
+      },
+      {
+        path:"/add-bills",
+        Component:AddBill,
       }
     ]
   }

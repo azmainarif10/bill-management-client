@@ -105,6 +105,9 @@ const MyBill = () => {
        doc.text(`Total Amount: ${totalAmount}`, 14, finalY + 17);
         doc.save("Billing-Report.pdf");
    }
+   function closeModal(){
+    modalRef.current.close()
+   }
     return (
         <div>
              <div className="overflow-x-auto hidden lg:block">
@@ -259,6 +262,10 @@ const MyBill = () => {
     
    {selectedBill && (
   <form onSubmit={(e)=>{handleUpdate(e)}}>
+
+  <button type='button' onClick={closeModal} className="btn btn-sm btn-circle bg-violet-400 text-white btn-ghost absolute right-8 top-8">✕</button>
+        <p className="py-4 text-gray-800">Press ESC key or click on ✕ button to close</p>
+
     <div>
       <label
         htmlFor="amount"

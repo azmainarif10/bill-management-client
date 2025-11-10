@@ -19,31 +19,36 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex="-1"
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <Link to={'/'}> Home </Link>
-        <Link to={'/bills'}> Bills </Link>
-        {
-        user &&  <Link to={'/bill-detail/:id'}>  Bill Details </Link>
+        className="menu menu-sm dropdown-content text-xl bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          <Link to={'/'}> <p className="text-xl text-violet-400 font-medium">Home</p> </Link>
+        <Link to={'/bills'}> <p className="text-xl text-violet-400 font-medium">Bills</p> </Link>
+        <Link to={'/add-bills'}> <p className="text-xl text-violet-400 font-medium"> Add Bills</p> </Link>
+
+         {
+        user &&  <Link to={'/bill-detail/:id'}> <p className="text-xl text-violet-400 font-medium">Bill Details</p> </Link>
 
         }
-        {
-        user &&  <Link to={'/pay-bill'}> My Pay Bills </Link>
+       {
+        user &&  <Link to={'/pay-bill'}> <p className="text-xl text-violet-400 font-medium">My Pay Bills</p></Link>
 
-        }
+       }
+        
       </ul>
     </div>
   
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal flex gap-4 px-1">
-        <Link to={'/'}> Home </Link>
-        <Link to={'/bills'}> Bills </Link>
+        <Link to={'/'}> <p className="text-xl text-violet-400 font-medium">Home</p> </Link>
+        <Link to={'/bills'}> <p className="text-xl text-violet-400 font-medium">Bills</p> </Link>
+        <Link to={'/add-bills'}> <p className="text-xl text-violet-400 font-medium"> Add Bills</p> </Link>
+
          {
-        user &&  <Link to={'/bill-detail/:id'}> Bill Details </Link>
+        user &&  <Link to={'/bill-detail/:id'}> <p className="text-xl text-violet-400 font-medium">Bill Details</p> </Link>
 
         }
        {
-        user &&  <Link to={'/pay-bill'}> My Pay Bills </Link>
+        user &&  <Link to={'/pay-bill'}> <p className="text-xl text-violet-400 font-medium">My Pay Bills</p></Link>
 
        }
        
