@@ -3,6 +3,8 @@ import useMyBills from '../Utils/myBills';
 import { AuthContext } from './AuthContext';
 import useAxios from '../Utils/axios';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2'
+
 
 const MyBill = () => {
     const instance = useAxios()
@@ -34,6 +36,40 @@ const MyBill = () => {
    })
    .catch(() => toast("Update failed!"));
   }
+   function handleDelete(billId){
+    
+          Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+
+    instance.delete(`/my-bills/delete/${billId}`)
+     .then(()=>{
+          const deleted = myBills.filter(bill=>bill._id !== billId)
+          setMyBills(deleted)
+        
+           Swal.fire({
+      title: "Deleted!",
+      text: "Your bill has been deleted.",
+      icon: "success"
+        });
+        
+        })
+      .catch(() => {
+                    toast.error("Delete failed!");
+                });
+  }
+});
+     
+  
+
+   }
     return (
         <div>
              <div className="overflow-x-auto">
@@ -88,7 +124,7 @@ const MyBill = () => {
         <th className='flex gap-5'>
           <button onClick={()=>{ setSelectedBill(mybill);
                                  handleModal()}} className="btn bg-violet-400 text-white btn-xs">Update</button>
-          <button className="btn bg-violet-400 text-white btn-xs">Delete</button>
+          <button onClick={()=>{handleDelete(mybill._id)}} className="btn bg-violet-400 text-white btn-xs">Delete</button>
 
         </th>
         </tr>
