@@ -159,7 +159,7 @@ const BillDetail = () => {
       className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 shadow-sm p-3 text-sm text-gray-600 cursor-not-allowed"
     />
   </div>
-  <div key="amount">
+  <div key="date">
     <label htmlFor="date" className="block text-sm font-medium text-gray-700">
       Date
     </label>

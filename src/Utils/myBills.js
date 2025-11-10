@@ -18,7 +18,7 @@ const [myBills,setMyBills] = useState([])
   
   [instance,user])
 
- return myBills;
+ return {myBills,setMyBills};
 
  }
   export default useMyBills;
