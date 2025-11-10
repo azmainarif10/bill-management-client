@@ -4,6 +4,7 @@ import Card from '../Components/Card';
 import Banner from '../Components/Banner';
 
 const Home = () => {
+    
     return (
         <div>
             <Banner></Banner>

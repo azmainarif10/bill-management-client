@@ -2,7 +2,7 @@ import React from 'react';
 import Lottie from "lottie-react";
 import Loading from "../Utils/Loading.json";
 
-const Loader = () => {
+const Load = () => {
     return (
         <div>
             <div className='flex min-h-screen justify-center items-center'>
@@ -12,4 +12,4 @@ const Loader = () => {
     );
 };
 
-export default Loader;
+export default Load;

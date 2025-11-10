@@ -1,15 +1,14 @@
 import React, { use } from 'react';
 import { AuthContext } from './AuthContext';
 import { Navigate, useLocation } from 'react-router';
-import Loading from '../Components/Loader';
-import Loader from '../Components/Loader';
+import Load from '../Components/Load';
 
 const Private = ({children}) => {
     const {user,loading} = use(AuthContext)
     const location = useLocation()
 
      if(loading){
-        return <Loader></Loader>
+        return <Load></Load>
      }
 
     if(user){

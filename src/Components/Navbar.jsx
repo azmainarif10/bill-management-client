@@ -7,6 +7,7 @@ const Navbar = () => {
   const {user,logOut} = use(AuthContext)
    
 
+
     return (
         <div>
             

@@ -1,10 +1,10 @@
 import React, { use, useRef } from 'react';
 import useDetail from '../Utils/details';
-import { Loader } from 'lucide-react';
 import { AuthContext } from './AuthContext';
 import useAxios from '../Utils/axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
+import Load from '../Components/Load';
 
 const BillDetail = () => {
   const modalRef =useRef()
@@ -21,7 +21,7 @@ const BillDetail = () => {
     })
 
  if(!detail){
-    return <Loader></Loader>
+    return <Load></Load>
    }
 
     function handleModal(){
@@ -61,8 +61,8 @@ const BillDetail = () => {
         <div>
              
     
-        <div className="card lg:card-side bg-base-100 gap-6 mt-5 ml-5 shadow-sm">
-          <figure className='w-96 h-96 overflow-hidden rounded-xl'>
+        <div className="card lg:card-side bg-base-100 gap-6 mt-5 lg:ml-5 shadow-sm">
+          <figure className='lg:w-96 lg:h-96 overflow-hidden rounded-xl'>
             <img
               src={detail.image}
               alt="Album"
@@ -75,7 +75,7 @@ const BillDetail = () => {
               {detail.title}
             </h2>
 
-<div className='flex flex-col justify-center items-center mt-5'>
+<div className='flex flex-col mx-2 lg:mx-0 justify-center items-center mt-5'>
                <div className='mt-5'>
               <p className="text-gray-800  text-xl">
                 Category: {detail.category}

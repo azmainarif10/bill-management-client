@@ -4,6 +4,7 @@ import { AuthContext } from './AuthContext';
 import useAxios from '../Utils/axios';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2'
+import Load from '../Components/Load';
 
 
 const MyBill = () => {
@@ -13,6 +14,8 @@ const MyBill = () => {
     const {user} = use(AuthContext)
     const {myBills,setMyBills} = useMyBills()
     const totalAmount = myBills.reduce((sum, bill) => sum + Number(bill.amount), 0);
+
+    if (!user) return <Load></Load> ;
   function handleModal(){
        modalRef.current.showModal()
        
@@ -72,8 +75,8 @@ const MyBill = () => {
    }
     return (
         <div>
-             <div className="overflow-x-auto">
-  <table className="table">
+             <div className="overflow-x-auto hidden lg:block">
+  <table className="table w-full">
     <thead>
       <tr>
         <th>
@@ -124,7 +127,7 @@ const MyBill = () => {
         <th className='flex gap-5'>
           <button onClick={()=>{ setSelectedBill(mybill);
                                  handleModal()}} className="btn bg-violet-400 text-white btn-xs">Update</button>
-          <button onClick={()=>{handleDelete(mybill._id)}} className="btn bg-violet-400 text-white btn-xs">Delete</button>
+          <button onClick={()=>{handleDelete(mybill._id)}} className="btn bg-indigo-400 text-white btn-xs">Delete</button>
 
         </th>
         </tr>
@@ -137,12 +140,83 @@ const MyBill = () => {
     </tbody>
    
   </table>
+   </div>
+
+   <div className="lg:hidden space-y-4">
+  {myBills.map((mybill, index) => (
+    <div key={mybill._id} className="card bg-base-100 shadow-xl border border-gray-200">
+      <div className="card-body p-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <div className="avatar">
+              <div className="mask mask-squircle h-12 w-12">
+                <img src={user.photoURL} alt="Avatar" />
+              </div>
+            </div>
+            <div>
+              <div className="font-bold text-lg">{mybill.username}</div>
+              <div className="text-lg text-gray-500">#{index + 1}</div>
+            </div>
+          </div>
+          <div className="badge badge-lg bg-violet-400 text-white font-bold">
+            {mybill.amount}
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <div className="flex flex-col">
+            <span className="text-lg text-gray-500 font-semibold">Address:</span>
+            <span className="text-sm">{mybill.address}</span>
+          </div>
+          
+          <div className="flex flex-col">
+            <span className="text-lg text-gray-500 font-semibold">Date:</span>
+            <span className="badge badge-ghost badge-sm">{mybill.date}</span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-lg text-gray-500 font-semibold">Email:</span>
+            <span className="text-lg">{mybill.email}</span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="text-lg text-gray-500 font-semibold">Phone:</span>
+            <span className="badge badge-ghost badge-sm">{mybill.phone}</span>
+          </div>
+        </div>
+
+        <div className="card-actions justify-end mt-4 gap-2">
+          <button 
+            onClick={() => { 
+              setSelectedBill(mybill);
+              handleModal()
+            }} 
+            className="btn bg-violet-400 text-white btn-sm flex-1"
+          >
+            Update
+          </button>
+          <button 
+            onClick={() => handleDelete(mybill._id)} 
+            className="btn bg-indigo-400 text-white btn-sm flex-1"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+
+</div>
+   
    <div className='flex gap-1 justify-end mr-5'>
     <button className='btn bg-violet-200 text-xl text-gray-800 rounded-xl '>Total Bill : {myBills.length}</button>
      <button className='btn bg-violet-200 text-xl  text-gray-800 rounded-xl'>Total Amount :{totalAmount}</button>
    </div>
-</div>
-  
+
+   <div className='flex justify-center py-5 items-center'>
+    <button className='btn  text-lg  bg-indigo-400 text-white'>Download Report</button>
+   </div>
+
     <dialog ref={modalRef} id="my_modal_5" className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
       <div className="max-w-xl mx-auto p-6 bg-violet-50 shadow-xl rounded-lg">
