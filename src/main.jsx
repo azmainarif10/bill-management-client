@@ -11,6 +11,7 @@ import SignUp from './User/SignUp';
 import Bills from './Pages/Bills';
 import BillDetail from './Pages/BillDetail';
 import Private from './Pages/Private';
+import MyBill from './Pages/MyBill';
 
 const router =createBrowserRouter([
   {
@@ -37,6 +38,12 @@ const router =createBrowserRouter([
         path:"/bill-detail/:id",
         element:(<Private>
           <BillDetail></BillDetail>
+        </Private>)
+      },
+      {
+        path:"/pay-bill",
+        element:(<Private>
+          <MyBill></MyBill>
         </Private>)
       }
     ]

@@ -43,6 +43,7 @@ const BillDetail = () => {
         additionalInfo,
         email:user.email,
          date,
+         amount:detail.amount,
       }
 
     try{

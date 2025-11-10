@@ -26,7 +26,7 @@ const Navbar = () => {
 
         }
         {
-        user &&  <Link to={'pay-bill'}> My Pay Bills </Link>
+        user &&  <Link to={'/pay-bill'}> My Pay Bills </Link>
 
         }
       </ul>
