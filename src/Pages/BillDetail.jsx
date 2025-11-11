@@ -74,6 +74,7 @@ if(!detail){
     }
     return (
         <div>
+                <title> Bill Details </title>
              
     
         <div className="card lg:card-side bg-base-300 gap-6 mt-5 lg:ml-5 shadow-sm">

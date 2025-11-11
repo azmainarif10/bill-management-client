@@ -13,27 +13,30 @@ import BillDetail from './Pages/BillDetail';
 import Private from './Pages/Private';
 import MyBill from './Pages/MyBill';
 import AddBill from './Pages/AddBill';
+import Error from './Pages/Error';
+import { HelmetProvider } from "react-helmet-async";
 
 const router =createBrowserRouter([
   {
     path:"/",
-    Component:Root,
+    element:<Root></Root>,
     children:[
       {
         index:true,
-        Component:Home
+        element:<Home></Home>
       },
       {
         path:"/login",
-        Component:Login,
+      element:<Login></Login>
+
       },
        {
         path:"/signup",
-        Component:SignUp,
+        element:<SignUp></SignUp>
       },
        {
         path:"/bills",
-        Component:Bills,
+        element:<Bills></Bills>
       },
        {
         path:"/bill-detail/:id",
@@ -52,7 +55,11 @@ const router =createBrowserRouter([
         element: <Private>
             <AddBill></AddBill>
         </Private>
-      }
+      },
+        {
+    path:"*",
+element:<Error></Error>
+   }
     ]
   }
 ])
@@ -61,8 +68,11 @@ const router =createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
+    <HelmetProvider>
+       <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
+    </HelmetProvider>
+    
   </StrictMode>,
 )

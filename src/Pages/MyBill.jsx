@@ -109,6 +109,9 @@ const MyBill = () => {
     modalRef.current.close()
    }
     return (
+           <>
+                <title> My Bills </title>
+
         <div>
              <div className="overflow-x-auto hidden lg:block">
   <table className="table w-full">
@@ -352,6 +355,7 @@ const MyBill = () => {
 </dialog>
     
         </div>
+        </>
     );
 };
 

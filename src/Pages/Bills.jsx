@@ -10,6 +10,10 @@ const Bills = () => {
  
     return (
       <>
+        
+                <title> Bills </title>
+        
+
         <div className='flex justify-center flex-col items-center'>
          <p className='text-3xl mt-3 text-violet-400 font-bold'> All Bids  </p>    
             <p className='text-3xl mt-3 text-violet-400 font-bold'> Such as:  <Typewriter

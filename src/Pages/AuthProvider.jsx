@@ -3,6 +3,7 @@ import React, { Children, useEffect, useState} from 'react';
 import { auth } from '../Utils/firebaseinit';
 import { AuthContext } from './AuthContext';
 
+
 const AuthProvider = ({children}) => {
       
     const googleProvider = new GoogleAuthProvider();
@@ -65,9 +66,9 @@ const updateUser = (name,url) =>{
 
     return (
         <div>
-            <AuthContext value={{category,setCategory,setLoading,updateUser,user,setUser,loading,googlePopUp,signUser,createUser,logOut}}>
+            <AuthContext.Provider value={{category,setCategory,setLoading,updateUser,user,setUser,loading,googlePopUp,signUser,createUser,logOut}}>
                 {children}
-            </AuthContext>
+            </AuthContext.Provider>
         </div>
     );
 };

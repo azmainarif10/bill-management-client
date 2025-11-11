@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const AddBill = () => {
  
+      
   
       const instance = useAxios()
       const {user} = use(AuthContext)
@@ -46,6 +47,10 @@ function handleSubmit(e){
 
 
     return (
+<>
+  
+          <title> Add Bills </title>
+     
         <div className='bg-linear-to-r from-blue-100 py-3 to-violet-100'>
                <div className="card mt-2 border border-gray-200 bg-violet-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
       <div className="card-body  relative">
@@ -138,6 +143,7 @@ function handleSubmit(e){
       </div>
     </div>
         </div>
+        </>
     );
 };
 

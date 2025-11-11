@@ -1,14 +1,14 @@
 import { use, useEffect, useState } from "react"
-import useAxios from "./axios"
 import { AuthContext } from "../Pages/AuthContext"
+import useSecureAxios from "./secureAxios"
 
  const useMyBills =()=>{
-  const instance = useAxios()
+  const secureInstance = useSecureAxios()
   const {user} = use(AuthContext)
 const [myBills,setMyBills] = useState([])
   useEffect(()=>{
 
-     instance.get(`/my-bills?email=${user.email}`)
+     secureInstance.get(`/my-bills?email=${user.email}`)
      .then((data)=>{
          setMyBills(data.data)
      })
@@ -16,7 +16,7 @@ const [myBills,setMyBills] = useState([])
 
   },
   
-  [instance,user])
+  [secureInstance,user])
 
  return {myBills,setMyBills};
 
