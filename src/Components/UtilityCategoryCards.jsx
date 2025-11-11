@@ -28,8 +28,8 @@ const utilityData = [
 ];
 
 const UtilityCard = ({ utility }) => (
-  <div className="bg-white rounded-3xl shadow-lg p-3 w-64 flex flex-col items-start transition duration-300 ease-in-out hover:shadow-xl">
-    <div className="w-full h-40 bg-violet-100 rounded-2xl mb-3 overflow-hidden">
+  <div className=" bg-violet-200 dark:bg-base-200 rounded-3xl shadow-lg p-3 w-64 flex flex-col items-start transition duration-300 ease-in-out hover:shadow-xl">
+    <div className="w-full h-40  rounded-2xl mb-3 overflow-hidden">
       <img 
         src={utility.image} 
         alt={`${utility.name} service illustration`}
@@ -42,26 +42,26 @@ const UtilityCard = ({ utility }) => (
         Utility Service
       </p>
       
-      <h3 className="text-xl font-bold text-gray-800 mb-2">
+      <h3 className="text-xl font-bold  dark:text-gray-200 text-gray-600 mb-2">
         {utility.name}
       </h3>
       
-      <p className="text-sm text-gray-500 mb-4 line-clamp-3 h-14">
+      <p className="text-sm text-gray-500  dark:text-gray-200 mb-4 line-clamp-3 h-14">
         {utility.description}
       </p>
 
-      <div className="text-xs text-gray-400 mb-4 space-y-1">
+      <div className="text-xs text-gray-400 dark:text-gray-200 mb-4 space-y-1">
         <p>• Billing Cycle: Monthly</p>
         <p>• Avg. Usage: Tracked</p>
         <p>• Status: Active</p>
       </div>
 
       <div className="flex justify-between items-center pt-2 border-t border-violet-100">
-        <span className="text-2xl font-bold text-gray-800">
+        <span className="text-2xl font-bold  dark:text-gray-200 text-gray-800">
           {utility.price}
         </span>
-        <button className="bg-violet-300 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-blue-100 transition duration-150">
-          <span className="text-2xl font-light leading-none">+</span>
+        <button className="bg-violet-300   text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-blue-100 transition duration-150">
+          <span className="text-2xl   font-light leading-none">+</span>
         </button>
       </div>
     </div>
@@ -70,7 +70,7 @@ const UtilityCard = ({ utility }) => (
 
 const UtilityCategoryCards = () => {
   return (
-    <div className="p-10 bg-violet-50 min-h-screen">
+    <div className="p-10 bg-violet-50 dark:bg-base-100 min-h-screen">
       
       <h1 className="text-4xl text-center font-bold text-violet-400 mb-10">
         Bill Categories

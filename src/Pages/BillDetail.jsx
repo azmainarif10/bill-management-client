@@ -76,7 +76,7 @@ if(!detail){
         <div>
              
     
-        <div className="card lg:card-side bg-base-100 gap-6 mt-5 lg:ml-5 shadow-sm">
+        <div className="card lg:card-side bg-base-300 gap-6 mt-5 lg:ml-5 shadow-sm">
           <figure className='lg:w-96 lg:h-96 overflow-hidden rounded-xl'>
             <img
               src={detail.image}
@@ -92,30 +92,30 @@ if(!detail){
 
 <div className='flex flex-col mx-2 lg:mx-0 justify-center items-center mt-5'>
                <div className='mt-5'>
-              <p className="text-gray-800  text-xl">
+              <p className=" text-gray-800 dark:text-gray-200 text-xl">
                 Category: {detail.category}
               </p>
 
-            <p className="text-gray-800 text-lg">
+            <p className=" text-gray-800 dark:text-gray-200 text-lg">
               Lesson Price : {detail.amount}
             </p>
 
-            <p className="text-gray-800 text-lg">
+            <p className=" text-gray-800 dark:text-gray-200 text-lg">
               Location : {detail.location}
             </p>
 
-            <p className="text-gray-800 text-lg">
+            <p className=" text-gray-800 dark:text-gray-200 text-lg">
               Date: {detail.date}
             </p>
 
-            <p className="text-gray-800 text-lg">
+            <p className=" text-gray-800 dark:text-gray-200 text-lg">
               Details: {detail.description}
             </p>
 
 
           
 
-              <p className="text-gray-800 text-lg mt-2.5">
+              <p className=" text-gray-800 dark:text-gray-200 text-lg mt-2.5">
                  Email:{detail.email}
 
               </p>
@@ -139,7 +139,7 @@ if(!detail){
       </h2>
       <form onSubmit={(e)=>{handleSubmit(e)}} className="space-y-6">
 
-  <button type='button'  onClick={closeModal} className="btn btn-sm btn-circle bg-violet-400 text-white btn-ghost absolute right-8 top-6">✕</button>
+  <button type='button'  onClick={closeModal} className="btn btn-sm btn-circle bg-violet-400 text-white btn-ghost absolute right-8 top-8">✕</button>
         <p className="py-4 text-gray-800">Press ESC key or click on ✕ button to close</p>
 
            

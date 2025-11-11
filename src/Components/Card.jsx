@@ -33,7 +33,7 @@ const Card = () => {
              data-aos={aosEffect}
              className={`lg:h-[30vh] ${offsetClass}`}
                             >
-         <div className="hero bg-violet-100 rounded-2xl">
+         <div className="hero  bg-violet-200 dark:bg-base-200  rounded-2xl">
         <div className="hero-content flex-col lg:flex-row">
           <img 
           src={latest.image} 
@@ -42,10 +42,10 @@ const Card = () => {
                                         />
                                         
          <div>
-         <h1 className="text-xl font-bold">{latest.title}!</h1>
-         <p className="py-2"> Category : {latest.category}</p>
-        <p className="py-2"> Location: {latest.location}</p>
-         <p className="py-2"> Date :{latest.date}</p>
+         <h1 className="text-xl font-bold  text-gray-800 dark:text-gray-200">{latest.title}!</h1>
+         <p className="py-2 text-gray-800 dark:text-gray-200"> Category : {latest.category}</p>
+        <p className="py-2  text-gray-800 dark:text-gray-200 "> Location: {latest.location}</p>
+         <p className="py-2   text-gray-800 dark:text-gray-200"> Date :{latest.date}</p>
                                             
         <Link to={`/bill-detail/${latest._id}`}>
          <button className="btn bg-violet-400 text-white hover:bg-violet-500">

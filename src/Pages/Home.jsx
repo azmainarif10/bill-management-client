@@ -6,11 +6,13 @@ import Banner from '../Components/Banner';
 const Home = () => {
     
     return (
+        
         <div>
             <Banner></Banner>
             <UtilityCategoryCards></UtilityCategoryCards>
             <Card></Card>
         </div>
+        
     );
 };
 

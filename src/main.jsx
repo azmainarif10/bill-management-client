@@ -49,7 +49,9 @@ const router =createBrowserRouter([
       },
       {
         path:"/add-bills",
-        Component:AddBill,
+        element: <Private>
+            <AddBill></AddBill>
+        </Private>
       }
     ]
   }
