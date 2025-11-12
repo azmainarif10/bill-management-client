@@ -20,7 +20,7 @@ const Card = () => {
 
     return (
         <div>
-            <div className='lg:px-40 lg:py-20'>
+            <div className='lg:px-40 lg:py-20 mb-10'>
                 <div data-aos="fade-up" className='grid grid-cols-1 gap-4  md:grid-cols-2 lg:gap-y-32 lg:gap-x-8'>
                     {latests.map((latest, index) => {
                         const isOddIndex = index % 2 !== 0;
