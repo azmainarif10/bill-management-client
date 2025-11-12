@@ -1,10 +1,14 @@
 import { use, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Pages/AuthContext";
+import Load from "./Load";
 
 const Navbar = () => {
   const [theme,setTheme] = useState(localStorage.getItem("theme") || "light")
-  const {user,logOut} = use(AuthContext)
+  const {user,logOut,loading} = use(AuthContext)
+
+
+  
   useEffect(()=>{ const html = document.querySelector("html");
      html.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme); 
@@ -15,7 +19,9 @@ const Navbar = () => {
          setTheme(checked ? "dark" :"light")
          }
 
-
+if(loading){
+    return <Load></Load>
+  }
     return (
         <div>
               <div className="flex justify-center items-center md:hidden">
@@ -35,16 +41,18 @@ const Navbar = () => {
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content text-xl bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          <Link to={'/'}> <p className="text-xl text-violet-400 font-medium">Home</p> </Link>
-        <Link to={'/bills'}> <p className="text-xl text-violet-400 font-medium">Bills</p> </Link>
-        <Link to={'/add-bills'}> <p className="text-xl text-violet-400 font-medium"> Add Bills</p> </Link>
+          <li className="text-xl text-violet-400 font-medium"><Link to={'/'}>Home</Link></li> 
+          <li className="text-xl text-violet-400 font-medium"><Link to={'/bills'}>Bills</Link></li> 
+          <li className="text-xl text-violet-400 font-medium"><Link to={'/add-bills'}>Add Bills</Link></li> 
+        
+      
 
          {
-        user &&  <Link to={'/bill-detail/:id'}> <p className="text-xl text-violet-400 font-medium">Bill Details</p> </Link>
+        user &&   <li className="text-xl text-violet-400 font-medium"><Link to={'/bill-detail/:id'}> Bill Details</Link></li> 
 
         }
        {
-        user &&  <Link to={'/pay-bill'}> <p className="text-xl text-violet-400 font-medium">My Pay Bills</p></Link>
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
 
        }
         
@@ -54,16 +62,18 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal flex gap-4 px-1">
-        <Link to={'/'}> <p className="text-xl text-violet-400 font-medium">Home</p> </Link>
-        <Link to={'/bills'}> <p className="text-xl text-violet-400 font-medium">Bills</p> </Link>
-        <Link to={'/add-bills'}> <p className="text-xl text-violet-400 font-medium"> Add Bills</p> </Link>
+        <li className="text-xl text-violet-400 font-medium"><Link to={'/'}>Home</Link></li> 
+          <li className="text-xl text-violet-400 font-medium"><Link to={'/bills'}>Bills</Link></li> 
+          <li className="text-xl text-violet-400 font-medium"><Link to={'/add-bills'}>Add Bills</Link></li> 
+        
+      
 
          {
-        user &&  <Link to={'/bill-detail/:id'}> <p className="text-xl text-violet-400 font-medium">Bill Details</p> </Link>
+        user &&   <li className="text-xl text-violet-400 font-medium"><Link to={'/bill-detail/:id'}> Bill Details</Link></li> 
 
         }
        {
-        user &&  <Link to={'/pay-bill'}> <p className="text-xl text-violet-400 font-medium">My Pay Bills</p></Link>
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
 
        }
        

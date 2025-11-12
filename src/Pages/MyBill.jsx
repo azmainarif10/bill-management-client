@@ -14,10 +14,12 @@ const MyBill = () => {
     const [selectedBill,setSelectedBill]= useState(null)
     const modalRef = useRef()
     const {user} = use(AuthContext)
-    const {myBills,setMyBills} = useMyBills()
+    const {myBills,setMyBills,billsLoading} = useMyBills()
     const totalAmount = myBills.reduce((sum, bill) => sum + Number(bill.amount), 0);
 
-    if (!user) return <Load></Load> ;
+    if (!user || billsLoading){
+    return <Load></Load> ;
+    } 
   function handleModal(){
        modalRef.current.showModal()
        

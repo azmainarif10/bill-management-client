@@ -15,7 +15,14 @@ const BillDetail = () => {
     const navigate = useNavigate()  
     
 if(!detail){
-    return <Load></Load>
+  
+    return(
+      <>
+          <p className='text-xl text-center mt-10 text-indigo-400 font-bold'>You have not clicked see Details.That's why bill no bill details </p>
+
+      <Load></Load>
+    </>
+    )
    }
 
     const currentMonth = currentDate.getMonth()
