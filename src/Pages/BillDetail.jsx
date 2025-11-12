@@ -1,16 +1,16 @@
 import React, { use, useRef } from 'react';
 import useDetail from '../Utils/details';
 import { AuthContext } from './AuthContext';
-import useAxios from '../Utils/axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
 import Load from '../Components/Load';
+import useSecureAxios from '../Utils/secureAxios';
 
 const BillDetail = () => {
   const modalRef =useRef()
  const detail = useDetail()
  const {user} = use(AuthContext)
- const instance = useAxios()
+ const secureInstance = useSecureAxios()
  const currentDate=  new Date()
     const navigate = useNavigate()  
     
@@ -59,7 +59,7 @@ if(!detail){
       }
 
     try{
-       await instance.post("/my-bills",myBills)
+       await secureInstance.post("/my-bills",myBills)
       toast.success('Payment successful! Your bill has been saved.')
 
         modalRef.current.close()
