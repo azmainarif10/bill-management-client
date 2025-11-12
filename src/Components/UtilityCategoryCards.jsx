@@ -46,11 +46,11 @@ const UtilityCard = ({ utility }) => (
         {utility.name}
       </h3>
       
-      <p className="text-sm text-gray-500  dark:text-gray-200 mb-4 line-clamp-3 h-14">
+      <p className="text-sm text-gray-700  dark:text-gray-200 mb-4 line-clamp-3 h-14">
         {utility.description}
       </p>
 
-      <div className="text-xs text-gray-400 dark:text-gray-200 mb-4 space-y-1">
+      <div className="text-xs text-gray-500 dark:text-gray-200 mb-4 space-y-1">
         <p>• Billing Cycle: Monthly</p>
         <p>• Avg. Usage: Tracked</p>
         <p>• Status: Active</p>

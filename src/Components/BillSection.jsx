@@ -72,14 +72,14 @@ const IllustratedCard = () => {
 
 const BillSection = () => {
   return (
-    <div className=" bg-violet-100 text-gray-900 p-8 md:p-16 pb-20 relative overflow-hidden">
+    <div className=" bg-violet-100 dark:bg-base-200 text-gray-900 p-8 md:p-16 pb-20 relative overflow-hidden">
       
      
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between pt-4 md:pt-20 max-w-7xl mx-auto">
         
        
         <div className="w-full md:w-1/2 mb-10 md:mb-0"> 
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-500">
             Pay your Bills 
           </h1>
           <p className="text-xl text-gray-600">

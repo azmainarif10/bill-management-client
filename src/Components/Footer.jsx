@@ -16,12 +16,12 @@ const Footer = () => {
     />
     
     <p className="font-extrabold text-lg">
-        ACME Industries Ltd.
+        Bill Management System.
+
     </p>
     
     <p className="text-sm mt-1">
-        We build the future, one byte at a time.
-        <br/>Providing reliable tech since 2020.
+       
     </p>
 </aside>
        
@@ -69,7 +69,7 @@ const Footer = () => {
     </div>
   </nav>
 </footer>
-    <p className='text-center bg-base-300'>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p className='text-center bg-base-300'>Copyright © { new Date().getFullYear()} - All right reserved by BMS  Ltd</p>
 
 </>
     );

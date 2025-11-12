@@ -4,6 +4,7 @@ import Card from '../Components/Card';
 import Banner from '../Components/Banner';
 import Accordion from '../Components/Accordion';
 import OnboardingSection from '../Components/BillSection';
+import Stats from '../Components/Stats';
 
 const Home = () => {
     
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <UtilityCategoryCards></UtilityCategoryCards>
              <Card></Card>
+             <Stats></Stats>
             <OnboardingSection></OnboardingSection>
             
             <Accordion></Accordion>
