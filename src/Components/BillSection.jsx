@@ -59,7 +59,7 @@ const IllustratedCard = () => {
             </li>
           </ul>
           
-        <Link to={"/bills"}>  <button className="mt-6 w-full flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 transition-colors text-white font-semibold py-2 px-4 rounded-lg">
+        <Link to={"/bills"}>  <button className="mt-6 w-full flex items-center justify-center bg-violet-400 hover:bg-indigo-700 transition-colors text-white font-semibold py-2 px-4 rounded-lg">
             <ArrowRightIcon className="w-5 h-5 mr-2" />
             Proceed to Bills
           </button></Link>

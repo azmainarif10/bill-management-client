@@ -119,7 +119,7 @@ const BenefitBanner = () => {
 
   return (
     <div className="font-roboto min-h-screen  pt-12">
-      <h2 className="text-4xl font-extrabold text-violet-500 text-center mb-5">
+      <h2 className="text-4xl font-extrabold text-violet-400 text-center mb-5">
         Key Benefits of Bill Management
       </h2>
 
