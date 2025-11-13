@@ -52,20 +52,18 @@ if(loading){
 
         }
        {
-        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/my-bills'}>My Pay Bill </Link></li> 
 
        }
 
-       
-    <div className=" flex flex-col justify-center  gap-2">
-   {
-    user ? (<Link onClick={logOut} className="btn  text-white bg-violet-400"> Logout </Link>) :
-    (<div className="flex flex-col w-1/2 gap-2">
-       <Link to={'/login'} className="btn bg-violet-400 text-white w-full">Login</Link>
-       <Link to={'/signup'} className="btn bg-violet-400 text-white w-full">SignUp</Link>
-    </div>)
-   }
+      <div className="py-3">
+ {
+  user && user.photoURL ?( <img  className='w-10 h-10 rounded-full' src={user.photoURL}></img>  ) : 
+  ( <img  className='w-10 h-full rounded-full' src='https://i.ibb.co.com/gL19M6xH/icon-7797704-640.png'></img>  )
+ }
    </div>
+       
+   
         
       </ul>
     </div>
@@ -84,7 +82,7 @@ if(loading){
 
         }
        {
-        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/my-bills'}>My Pay Bill </Link></li> 
 
        }
        
@@ -93,13 +91,23 @@ if(loading){
   <div className="navbar-end flex gap-2.5">
     
    
- 
+ <div>
+   <div className=" flex md:hidden mr-6  gap-2">
+   {
+    user ? (<Link onClick={logOut} className="btn  text-white bg-violet-400"> Logout </Link>) :
+    (<div className="flex  w-1/2 gap-2">
+       <Link to={'/login'} className="btn bg-violet-400 text-white w-full">Login</Link>
+       <Link to={'/signup'} className="btn bg-violet-400 text-white w-full">SignUp</Link>
+    </div>)
+   }
+   </div>
+   <div className="hidden md:block">
  {
   user && user.photoURL ?( <img  className='w-10 h-10 rounded-full' src={user.photoURL}></img>  ) : 
   ( <img  className='w-10 h-full rounded-full' src='https://i.ibb.co.com/gL19M6xH/icon-7797704-640.png'></img>  )
  }
-   
-   
+   </div>
+   </div>
     <div className=" hidden md:flex gap-2">
    {
     user ? (<Link onClick={logOut} className="btn mr-10 text-white bg-violet-400"> Logout </Link>) :
