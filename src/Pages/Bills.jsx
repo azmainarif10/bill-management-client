@@ -30,12 +30,12 @@ const Bills = () => {
                 <div className="dropdown dropdown-bottom flex justify-end lg:mr-15 mr-3">
   <div tabIndex={0} role="button" className="btn  bg-violet-400 text-white m-1">Filter by category</div>
   <ul tabIndex="-1" className="dropdown-content menu bg-violet-400 text-white rounded-box z-1 w-52 p-2 shadow-sm">
-     <li><a onClick={() => setCategory("All")} >All</a></li>
+     <li><button onClick={() => setCategory("All")} >All</button></li>
 
-    <li><a onClick={() => setCategory("Water")} >Water</a></li>
-    <li><a onClick={() => setCategory("Internet")} >Internet</a></li>
-    <li><a onClick={() => setCategory("Electricity")}>Electricity</a></li>
-     <li><a onClick={() => setCategory("Gas")} >Gas</a></li>
+    <li><button onClick={() => setCategory("Water")} >Water</button></li>
+    <li><button onClick={() => setCategory("Internet")} >Internet</button></li>
+    <li><button onClick={() => setCategory("Electricity")}>Electricity</button></li>
+     <li><button onClick={() => setCategory("Gas")} >Gas</button></li>
   </ul>
 </div>
                 <AllCard></AllCard>

@@ -45,7 +45,7 @@ const router =createBrowserRouter([
         </Private>)
       },
       {
-        path:"/pay-bill",
+        path:"/my-bills",
         element:(<Private>
           <MyBill></MyBill>
         </Private>)

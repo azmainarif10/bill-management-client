@@ -52,7 +52,7 @@ if(loading){
 
         }
        {
-        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/my-bills'}>My Pay Bill </Link></li> 
 
        }
         
@@ -73,7 +73,7 @@ if(loading){
 
         }
        {
-        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/my-bills'}>My Pay Bill </Link></li> 
 
        }
        

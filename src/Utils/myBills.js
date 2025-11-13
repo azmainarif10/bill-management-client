@@ -9,7 +9,7 @@ const [myBills,setMyBills] = useState([])
  const [billsLoading, setBillsLoading] = useState(true);
 
   useEffect(()=>{
-
+      if (!user?.email) return;
      secureInstance.get(`/my-bills?email=${user.email}`)
      .then((data)=>{
          setMyBills(data.data)

@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import Load from '../Components/Load';
 import { jsPDF } from 'jspdf'
 import  autoTable  from 'jspdf-autotable'
+import ReportView from '../Components/ReportView';
 
 
 const MyBill = () => {
@@ -17,8 +18,35 @@ const MyBill = () => {
     const {myBills,setMyBills,billsLoading} = useMyBills()
     const totalAmount = myBills.reduce((sum, bill) => sum + Number(bill.amount), 0);
 
-    if (!user || billsLoading){
-    return <Load></Load> ;
+    if (!user ){
+    return (<>
+   <p className='text-xl text-center mt-10 text-indigo-400 font-bold'>You have not pay any bills yet!!! </p>
+
+    <Load></Load>
+    
+    </>
+
+    )  ;
+    } 
+    if ( billsLoading){
+    return (<>
+   <p className='text-xl text-center mt-10 text-indigo-400 font-bold'> Your paid bills are Loading!!! </p>
+
+    <Load></Load>
+    
+    </>
+
+    )  ;
+    } 
+    if (myBills.length === 0){
+    return (<>
+   <p className='text-xl text-center mt-10 text-indigo-400 font-bold'> Your have not paid any bills yet!!! </p>
+
+    <Load></Load>
+    
+    </>
+
+    )  ;
     } 
   function handleModal(){
        modalRef.current.showModal()
@@ -254,7 +282,7 @@ const MyBill = () => {
    </div>
 
    <div className='flex justify-center py-5 items-center'>
-    <button onClick={()=>{handleReport()}} className='btn  text-lg  bg-indigo-400 text-white'>Download Report</button>
+    <button onClick={()=>{handleReport()}} className='btn  text-lg  bg-violet-400 text-white'>Download Report</button>
    </div>
 
     <dialog ref={modalRef} id="my_modal_5" className="modal modal-bottom sm:modal-middle">
@@ -355,7 +383,7 @@ const MyBill = () => {
 
   </div>
 </dialog>
-    
+    <ReportView myBills={myBills} ></ReportView>
         </div>
         </>
     );

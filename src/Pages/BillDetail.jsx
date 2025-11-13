@@ -63,6 +63,7 @@ if(!detail){
         email:user.email,
          date,
          amount:detail.amount,
+         image:detail.image,
       }
 
     try{
@@ -70,7 +71,7 @@ if(!detail){
       toast.success('Payment successful! Your bill has been saved.')
 
         modalRef.current.close()
-         navigate("/bills")
+         navigate("/my-bills")
     } catch(error){
       toast.error(error.code);
     } 
