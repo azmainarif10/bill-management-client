@@ -6,6 +6,7 @@ import { AuthContext } from "../Pages/AuthContext"
   const instance = useAxios()
   const {category} = use(AuthContext)
 const [allBid,setAllBid] = useState([])
+const [billsLoading,setBillsLoading] = useState(true)
   useEffect(()=>{
  
      const url =
@@ -17,6 +18,7 @@ const [allBid,setAllBid] = useState([])
      instance.get(url)
      .then((data)=>{
          setAllBid(data.data)
+         setBillsLoading(false)
      })
 
 
@@ -24,7 +26,7 @@ const [allBid,setAllBid] = useState([])
   
   [instance,category])
 
- return allBid;
+ return {allBid,billsLoading};
 
  }
   export default useBids; 

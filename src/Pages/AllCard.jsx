@@ -1,9 +1,14 @@
 import React from 'react';
 import useBids from '../Utils/allBids';
 import { Link } from 'react-router';
+import Load from '../Components/Load';
 
 const AllCard = () => {
-  const allBid = useBids()
+  const {allBid,billsLoading} = useBids()
+
+  if(billsLoading){
+    return <Load></Load>
+  }
     return (
         <div className='w-11/12 mt-4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {
