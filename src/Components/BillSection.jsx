@@ -19,7 +19,7 @@ const IllustratedCard = () => {
           <div className="absolute -top-10 right-0 transform translate-x-1/4">
             <div className="bg-gradient-to-tr from-green-100 to-white p-4 rounded-xl shadow-xl border border-green-500/50 flex items-center">
               <ShieldCheckIcon className="w-5 h-5 text-green-600 mr-2" />
-              <span className="text-gray-800 font-bold text-sm">SECURE PAYMENT</span>
+              <span className="text-gray-800 hidden md:block font-bold text-sm">SECURE PAYMENT</span>
             </div>
           </div>
           
