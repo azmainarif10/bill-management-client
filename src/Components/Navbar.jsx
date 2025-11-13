@@ -31,7 +31,7 @@ if(loading){
             <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
     <div className=" hidden md:flex items-center  gap-2 sm:gap-3">
-      <img src="/Payment.png" alt="" className="h-20 w-40 "/>
+      <img src="/Payment.png" alt="" className="h-20 w-40  "/>
       <p className=" font-bold text-xl  text-indigo-400">BILL MANAGEMENT</p>
     </div>
     <div className="dropdown">
@@ -52,9 +52,20 @@ if(loading){
 
         }
        {
-        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/my-bills'}>My Pay Bill </Link></li> 
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
 
        }
+
+       
+    <div className=" flex flex-col justify-center  gap-2">
+   {
+    user ? (<Link onClick={logOut} className="btn  text-white bg-violet-400"> Logout </Link>) :
+    (<div className="flex flex-col w-1/2 gap-2">
+       <Link to={'/login'} className="btn bg-violet-400 text-white w-full">Login</Link>
+       <Link to={'/signup'} className="btn bg-violet-400 text-white w-full">SignUp</Link>
+    </div>)
+   }
+   </div>
         
       </ul>
     </div>
@@ -73,7 +84,7 @@ if(loading){
 
         }
        {
-        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/my-bills'}>My Pay Bill </Link></li> 
+        user &&  <li className="text-xl text-violet-400 font-medium"><Link to={'/pay-bill'}>My Pay Bill </Link></li> 
 
        }
        
@@ -87,7 +98,9 @@ if(loading){
   user && user.photoURL ?( <img  className='w-10 h-10 rounded-full' src={user.photoURL}></img>  ) : 
   ( <img  className='w-10 h-full rounded-full' src='https://i.ibb.co.com/gL19M6xH/icon-7797704-640.png'></img>  )
  }
-
+   
+   
+    <div className=" hidden md:flex gap-2">
    {
     user ? (<Link onClick={logOut} className="btn mr-10 text-white bg-violet-400"> Logout </Link>) :
     (<>
@@ -96,7 +109,7 @@ if(loading){
 
     </>)
    }
-    
+    </div>
   </div>
 
  <label className="flex cursor-pointer mr-4 gap-2">
@@ -133,5 +146,4 @@ if(loading){
 
     );
 };
-
 export default Navbar;
