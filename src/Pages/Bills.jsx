@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter'
 import AllCard from './AllCard';
 import { AuthContext } from './AuthContext';
@@ -6,7 +6,9 @@ import { AuthContext } from './AuthContext';
 const Bills = () => {
   const {setCategory} = use(AuthContext)
      
-
+ useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []); 
  
     return (
       <>

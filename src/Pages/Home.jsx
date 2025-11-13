@@ -5,6 +5,7 @@ import Banner from '../Components/Banner';
 import Accordion from '../Components/Accordion';
 import OnboardingSection from '../Components/BillSection';
 import Stats from '../Components/Stats';
+import BenefitBanner from '../Components/BenefitBanner';
 
 const Home = () => {
     
@@ -16,6 +17,8 @@ const Home = () => {
             <Banner></Banner>
             <UtilityCategoryCards></UtilityCategoryCards>
              <Card></Card>
+          <BenefitBanner></BenefitBanner>
+
              <Stats></Stats>
             <OnboardingSection></OnboardingSection>
             

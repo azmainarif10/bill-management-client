@@ -69,7 +69,7 @@ const SignUp = () => {
       
         <div>
 <title>Sign Up</title>
-           <div className="hero bg-base-200 min-h-screen">
+           <div className="hero  mt-16">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
      
@@ -77,7 +77,7 @@ const SignUp = () => {
     </div>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
-         <h1 className="text-5xl font-bold">Register now!</h1>
+         <h1 className="text-5xl text-violet-500 font-bold">Register now!</h1>
         
                <form onSubmit={(e)=>handleCreatedUser(e)}>
                <fieldset className="fieldset">
@@ -90,7 +90,7 @@ const SignUp = () => {
           <label className="label">Password</label>
           <input type="password" name='password'  className="input" placeholder="Password" />
         
-          <button  className="btn btn-neutral mt-4">Register</button>
+          <button  className="btn bg-violet-500 mt-4">Register</button>
          
          </fieldset>
          
